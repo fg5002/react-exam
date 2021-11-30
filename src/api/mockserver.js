@@ -7,10 +7,11 @@ export function makeServer({ environment = 'development' } = {}) {
     seeds(server) {
     },
     routes() {
-      this.namespace = 'https://seriescharacters.com';
+      this.urlPrefix = 'https://seriescharacters.com';
+      this.namespace = '/api';
       this.timing = 2000
 
-      this.get('/api/howimetyourmother', (schema, request) => {
+      this.get('/howimetyourmother', (schema, request) => {
         return [
             { name: "Ted Mosby", details: "He is the main protagonist of the series..."},
             { name: "Barney Stinson", details: "He is best friend of the protagonist..."},
@@ -18,7 +19,7 @@ export function makeServer({ environment = 'development' } = {}) {
           ]
       })
 
-      this.post('/api/newsletter', (schema, request) => {
+      this.post('/newsletter', (schema, request) => {
         return { done: true }
       })
     },
