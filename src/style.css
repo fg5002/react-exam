@@ -1,7 +1,26 @@
 body {
   background-color: white;
+  padding: 30px;
 }
 
 App {
   font-family: arial;
+  text-align: center;
+
+}
+
+
+.loadmask {
+  font-size: larger;
+  margin-top: 50px;
+}
+
+.character {
+  padding: 10px;
+  border: 1px solid grey;
+  background-color: yellowgreen;
+}
+
+.loader{
+  font-size: 2rem;
 }

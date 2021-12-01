@@ -1,8 +1,8 @@
 import React from "react";
 
 const LoadingMask = () => (
-  <div>
-    Todo...
+  <div className="loader">
+    Loading
   </div>
 );
 
