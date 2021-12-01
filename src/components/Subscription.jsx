@@ -32,7 +32,7 @@ const Subscription = () => {
           setShow(false);
         }, 5000)
       })
-      .catch(function() {
+      .catch((error)=> {
         setError(true)
         setLoader(false)
     })
@@ -42,28 +42,28 @@ const Subscription = () => {
     <div>
       { !show 
         && (
-          <form onSubmit={(e) => subscribing(e)}>
-            <input 
-              type="email" 
-              value={email} 
-              onChange={(e) => setEmail(e.target.value)} 
-            />
+            <form onSubmit={(e) => subscribing(e)}>
+              <input 
+                type="email" 
+                value={email} 
+                onChange={(e) => setEmail(e.target.value)} 
+              />
 
-            <input
-              type="submit" 
-              value="Subscribe"
-              disabled={ !(email.includes('@') && email.includes('.'))}
-            />
-          </form>
-        ) 
+              <input
+                type="submit" 
+                value="Subscribe"
+                disabled={ !(email.includes('@') && email.includes('.'))}
+              />
+            </form>
+          ) 
       }
     
-    { loader && <LoadingMask />}
+      { loader && <LoadingMask />}
 
-    { message && <h3>Subscribed</h3> }
+      { message && <h3>Subscribed</h3> }
 
-    { error && <div>Error, something happened</div>}
-  </div>
+      { error && <div>Error, something happened</div>}
+    </div>
     
   )
 }
